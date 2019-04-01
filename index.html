@@ -2,29 +2,97 @@
 <html>
 <head>
     <title>Learning Java Script</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="main.css"></link>
     <script src="main.js"></script>
 </head>
-<body>
+<body id="body">
     <div class="header">
         <h1 id='heading'>Learning Java Script</h1>
-        <h1>With Tra</h1>
-        
-
+        <h1>With Omar</h1>
     </div>
 
-    <div class="container">
-        Login Form
-        <button onclick="changeText(this)">Click Me</button>
-        <script>
-            function changeText(id){
-                 id.innerHTML = 'You Clicked!!'
 
+<div>
+<form method="post" action="something.php" name="myForm"
+    onsubmit="return validateForm()">
+       
+    
+    <div>
+            <label>First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+    </div>
+        <br />
+    <div>
+                <label>Last Name</label>
+                <input type="text" name="lastName" id="lastName" />
+    </div>
+        <br />
+    <div>
+        <label>Background</label>
+        <select name="background" id="background" onchange="changeBackground(this)">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        </select>
+    </div>
+        <br />
+    
+        <input type="submit" value="Submit" />
+</form>
+</div>
+
+
+    <div class="container">
+        
+             <h1 id=time></h1>
+        <button onmouseout="ClearDate()" onmouseover="showTime()">Click Me</button>
+        <script>
+            function validateForm(){
+                // هنا افضل تستخدم java script library اسهل بكثير
+                var firstName = document.forms["myForm"]["firstName"].value;
+
+                if(firstName == null || firstName == ""){
+                    alert("First name is required");
+                    return false;
+                }
+                if(firstName.length < 3){
+                    alert("First name should be at least 3 chars");
+                    return false;
+                }
+
+            }
+
+
+
+            function changeBackground(x){
+                console.log(x.value);
+                var heading = document.getElementById('heading');
+                heading.style.color = x.value;
+
+            }
+
+
+
+
+
+
+          /*  function showTime(){
+                var time = document.getElementById('time');
+                time.innerHTML = Date();
+            }
+            function ClearDate(){
+                var time = document.getElementById('time');
+                time.innerHTML = '';
+            }/*
+
+
+/*function changeText(id){
+                 id.innerHTML = 'You Clicked!!'*/
 
 
                 // var heading = document.getElementById('heading');
                // heading.innerHTML = 'You Clicked!';
-            }
+            
 
 
 
@@ -135,5 +203,20 @@ console.log(users[0].name)*/
             
             </script>
     </div>
+<div class="shit"style = "border-bottom: black">
+    <h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+
+
+
+</script>
+
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+</div>
 </body>
 </html>
