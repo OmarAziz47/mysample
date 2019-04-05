@@ -1,16 +1,26 @@
 h1 {
     color: #000;
 }
-
-
-.powderblue {
-    height: 200px;
-    width: 50%;
+.bobo {
+    height: 100px;
+    width: 500px;
     background-color: powderblue;
+  }
+  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+  .w3-row-padding img {margin-bottom: 12px}
+  .bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/w3images/profile_girl.jpg');
+    min-height: 100%;}
+
+.w3-top{
+    margin-left:55%;
+    background-color:#FFFFFF;
+    padding:18px
 }
-body{
+#barr{
+    color: aqua;
 }
-.shit{
-    background-color: powderblue; height: 200px;
-width: 80%; text-align: center; align-items: center;
-}
+#barr {font-family: "Open Sans"}
