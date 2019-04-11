@@ -1,3 +1,12 @@
+<?php
+
+include_once('includes/connection.php');
+include_once('includes/article.php');
+$article = new Article;
+$articles = $article->fetch_all();
+
+print_r($articles);
+?>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -18,7 +27,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 }
 </style>
 <body>
-
 <!-- Sidebar with image -->
 <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:55%">
   <div class="bgimg"></div>
@@ -31,7 +39,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <div class="w1-top"  style="width:auto;left:529px;top:38px;">
   <div class="w1-row w2-padding w1-white"  >
     <div class="w3-col s3"  style="width:auto;right:0;">
-      <a id="barr" href="#top" class="w3-button w5-block w1-white"  >Top Rated</a>
+      <a id="barr" href="browse.php" class="w3-button w5-block w1-white"  >Top Rated</a>
     </div>
     <div class="w3-col s3"  style="width:auto;right:0;">
       <a href="#quates" class="w3-button w1-block w1-white" color="blue" >Food Quates</a>
@@ -41,25 +49,36 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
    <div  style="padding:158px 86px">
     <h1 style="font-size:44px;width:70%">You Can Trust Our Taste.</h1>
-    <form action="/action_page.php" target="_blank" >
-   
-    <p>Type at least in one of the three</p>
     
-    <p>Search:<input  style="width:60%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Eg. Fridays" required name="Name"></p>
-      <p>Location:<input style="width:40%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Eg. Riyadh" required name="Text"></p>
-      <p>Type of food:<input style="width:40%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Eg. Burgers" required name="Text"></p>
-      <p>
+    
+    
+    <form action="index.php" method="get" >
+    <p><input  style="width:60%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Eg. Fridays" name="search"></p>
+    <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> Search
         </button>
       </p>
+      </form>
+      <form action="index.php" method="get" class="w3-padding-24">
+      Location:
+      <div class="w3-section  w3-padding-16">
+      <?php echo time();?>
+      <button class="w3-button w3-light-grey">Riyadh</button>
+      <button class="w3-button w3-white"></i>Jeddah</button>
+      <button class="w3-button w3-light-grey w3-hide-small">Dammam</button>
+      <button class="w3-button w3-white w3-hide-small">Buraydah</button>
+    </div>
+      </form>
+      
    </div>
-    </form>
+   
   <!-- End Contact Section -->
   </div>  
+
   
   <!-- Footer -->
-  <footer style="margin-left:55%" class="w1-container w1-padding-64 w3-light-grey w3-center w3-opacity " style="margin:-34px">
+  <footer style="margin-left:55%" class="w3-container w3-padding-8 w3-light-grey w3-center w3-opacity " style="margin:-34px">
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
